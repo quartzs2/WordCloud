@@ -7,15 +7,14 @@ body {
   max-width: 1000px;
   width: 100%;
   box-sizing: border-box;
-  padding: 20px;
+  padding: 0px;
   display: flex;
   flex-direction: column;
   gap: 30px;
 }
 
-.title {
-  font-size: 1.5rem;
-  height: 60px;
+.wrapper h1 {
+  font-size: 2rem;
 }
 
 .input-link {
@@ -46,8 +45,7 @@ body {
   background-color: #275950;
 }
 
-.wordcloud-image {
-  width: 500px;
-  height: 500px;
-  background-color: #275950;
+.wordcloud-image img {
+  width: 1000px;
+  height: 1000px;
 }
