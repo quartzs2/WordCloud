@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/index.css" />
+    <link
+      rel="stylesheet"
+      as="style"
+      crossorigin
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"
+    />
+    <title>wordcloud</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <section class="title">
+        <h1>워드클라우드 생성하기</h1>
+      </section>
+      <section class="input-link">
+        <input type="text" placeholder="링크를 입력하세요!" />
+        <button>확인</button>
+      </section>
+      <section class="stopwords">
+        <div>불용어 목록</div>
+        <div>{{stopwords}}</div>
+      </section>
+      <section class="wordcloud-image">
+        <img src="/wordcloud.png" alt="wordcloud 이미지" />
+      </section>
+    </div>
+  </body>
+</html>

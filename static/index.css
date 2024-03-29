@@ -1,0 +1,53 @@
+body {
+  font-family: "Pretendard";
+}
+
+.wrapper {
+  margin: 0 auto;
+  max-width: 1000px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title {
+  font-size: 1.5rem;
+  height: 60px;
+}
+
+.input-link {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input-link input {
+  flex: 1;
+  box-sizing: border-box;
+  border: 1px solid rgb(220, 220, 220);
+  border-radius: 5px;
+  padding: 15px;
+}
+
+.input-link input:focus {
+  outline: none;
+  border: 1px solid #275950;
+}
+
+.input-link button {
+  margin-left: 2px;
+  cursor: pointer;
+  border: none;
+  width: 80px;
+  border-radius: 5px;
+  color: white;
+  background-color: #275950;
+}
+
+.wordcloud-image {
+  width: 500px;
+  height: 500px;
+  background-color: #275950;
+}
