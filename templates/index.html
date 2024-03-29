@@ -16,8 +16,13 @@
     <div class="wrapper">
       <h1>워드클라우드 생성하기</h1>
       <section>
-        <form action="/generate_image" method="POST" class="input-link">
+        <form action="/generate_image" method="POST" class="input">
           <input type="text" name="link" placeholder="링크를 입력하세요!" />
+          <input
+            type="text"
+            name="bs-select"
+            placeholder="값을 입력하세요! (예시 : #welcome-to-flask)"
+          />
           <button>확인</button>
         </form>
       </section>

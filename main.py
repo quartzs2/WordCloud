@@ -10,38 +10,33 @@ import requests
 
 app = Flask(__name__)
 
-
-def make_text(url):
-    response = requests.get(url)
-    if response.status_code == 200:
-        html = response.text
-        soup = BeautifulSoup(html, "lxml")
-        soup_text = soup.select_one('#welcome-to-flask').get_text()
-        return soup_text
-    else:
-        pass
-
 # 커스텀 색상 함수
 def custom_color_func(word, font_size, position, orientation, random_state=None, **kwargs):
     colors = ["#2A8C82", "#41BFB3", "#91F2E9", "#275950"]
     return random.choice(colors)
 
-@app.before_request
-def load_initial_text():
-    if 'text' not in g:
-        g.text = open('./static/src/alice.txt').read()
-
 # 이미지를 ndarray로 변환
 mask = np.array(Image.open('./static/src/alice_mask.png'))
 
-
 @app.route('/generate_image', methods=['POST'])
 def generate_image():
+    # index.html에서 값 가져오기
     link = request.form['link']
-    text = make_text(link)
+    bs_select = request.form['bs-select']
 
-    wordcloud = WordCloud(max_words=300, stopwords=STOPWORDS, mask=mask, background_color='black', color_func=custom_color_func, font_path='./static/src/NotoSansKR-Bold.ttf').generate(text)
+    # url로 beautifulsoup 생성
+    response = requests.get(link)
+    if response.status_code == 200:
+        html = response.text
+        soup = BeautifulSoup(html, "lxml")
+        soup_text = soup.select_one(bs_select).get_text()
+    else:
+        pass
 
+    # wordcloud 생성
+    wordcloud = WordCloud(max_words=300, stopwords=STOPWORDS, mask=mask, background_color='black', color_func=custom_color_func, font_path='./static/src/NotoSansKR-Bold.ttf').generate(soup_text)
+
+    # pyplot
     plt.figure(figsize=(10,10), frameon=False)
     plt.imshow(wordcloud)
     plt.axis('off') # 눈금 삭제

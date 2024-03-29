@@ -17,12 +17,12 @@ body {
   font-size: 2rem;
 }
 
-.input-link {
+.input {
   display: flex;
   justify-content: space-between;
 }
 
-.input-link input {
+.input input {
   flex: 1;
   box-sizing: border-box;
   border: 1px solid rgb(220, 220, 220);
@@ -30,12 +30,12 @@ body {
   padding: 15px;
 }
 
-.input-link input:focus {
+.input input:focus {
   outline: none;
   border: 1px solid #275950;
 }
 
-.input-link button {
+.input button {
   margin-left: 2px;
   cursor: pointer;
   border: none;
