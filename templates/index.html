@@ -15,14 +15,12 @@
   <body>
     <div class="wrapper">
       <h1>워드클라우드 생성하기</h1>
-      <section class="input-link">
-        <input type="text" placeholder="링크를 입력하세요!" />
-        <button>확인</button>
+      <section>
+        <form action="/url_input" method="POST" class="input-link">
+          <input type="text" name="link" placeholder="링크를 입력하세요!" />
+          <button>확인</button>
+        </form>
       </section>
-      <!-- <section class="stopwords">
-        <div>불용어 목록</div>
-        <div>{{stopwords}}</div>
-      </section> -->
       <section class="wordcloud-image">
         <img src="/wordcloud.png" alt="wordcloud 이미지" />
       </section>
